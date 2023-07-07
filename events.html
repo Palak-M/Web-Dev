@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- onChange event -->
+    <label>
+      Select your destination:
+      <select class="country" onChange="changeFun">
+        <option value="">Select one</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Spain">Spain</option>
+        <option value="Canada">Canada</option>
+        <option value="Switzerland">Switzerland</option>
+      </select>
+    </label>
+    <img
+      id="travelImg"
+      src="pexels-porapak-apichodilok-346885.jpg"
+      width="300"
+    />
+    <p id="imgLoading msg"></p>
+    <script>
+      function changeFun() {
+        var c = document.getElementsByClassName("country").value;
+        console.log(c);
+      }
+      <!--onload event-->
+      var showImg = document.getElementById("travelImg");
+      showImg.onload = function () {
+        document.getElementById("imgLoading msg").innerHTML = "Happy Travel!";
+      };
+    </script>
+  </body>
+</html>
